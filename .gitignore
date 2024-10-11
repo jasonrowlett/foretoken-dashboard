@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+.Trash/
+.cache/
+
+# Ignore Node.js packages and project dependencies
+node_modules/
+package-lock.json
+package.json
+
+# Ignore all files in specific directories
+amplify/
+.atom/
+.config/
+.git/
+.npm/
