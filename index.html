@@ -38,8 +38,12 @@
 
                 // Fetch Tether XAUT data from CoinGecko API
                 fetch(xautApiUrl)
-                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);  // Debugging: log the response for XAUT API
+                        return response.json();
+                    })
                     .then(dataXaut => {
+                        console.log(dataXaut);  // Debugging: log the data received for XAUT
                         dataXaut.forEach(function(item) {
                             tableData.push({
                                 "id": item.id,
@@ -51,11 +55,16 @@
                         return fetch(goldApiUrl, {
                             method: 'GET',
                             headers: {
-                                'X-Api-Key': 'ft4paYNO0+m9RmXhNKE9Hg==22g2rtHLLrlENuPy' // Replace with your actual API key
+                                'X-Api-Key': 'your_actual_api_key' // Replace with your actual API key
                             });
+                        });
                     })
-                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);  // Debugging: log the response for Gold API
+                        return response.json();
+                    })
                     .then(dataGold => {
+                        console.log(dataGold);  // Debugging: log the data received for Gold API
                         // Assuming the API returns a 'price' field
                         tableData.push({
                             "id": "physical-gold",
